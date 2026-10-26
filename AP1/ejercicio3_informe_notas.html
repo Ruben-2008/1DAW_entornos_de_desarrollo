@@ -26,17 +26,17 @@
 function crearInforme(nombre, notas) {
   let suma = 0;
   for (let i = 0; i < notas.length; i++) {
-    suma = suma + notas[i];
+    suma = suma + notas[i]; 
   }
 
-  const media = suma / notas.lenght;
+  let media = suma / notas.length; //error de sintaxis: const media = suma / notas.lenght; Se debe cambiar "lenght" por "length".
 
-  let resultado = "SUSPENSO";
-  if (media >= 5) {
-    resultdo = "APROBADO";
+  let resultado = "SUSPENSO"; 
+  if (media >= 5) { 
+    resultado = "APROBADO";
   }
 
-  media = media.toFixed(2);
+  media = media.toFixed(2); //error de ejecución: media = media.toFixed(2); Se debe cambiar "const" por "let" para poder modificar el valor de la variable.
 
   return nombre + " tiene una media de " + media + " y su resultado es " + resultado;
 }
@@ -44,8 +44,8 @@ function crearInforme(nombre, notas) {
 let notasAna = [8, 7, 6, 9];
 let notasLuis = [3, 5, 4, 5];
 
-console.log(crearInforme(notasAna, "Ana"));
-console.log(crearInforme(notasLuis, "Luis"));
+console.log(crearInforme("Ana", notasAna)); //error de ejecución: en la linea 26 se ve que pone crearinforme(nombre, notas) debido a eso hay que cambiar las lineas 47 y 48
+console.log(crearInforme("Luis", notasLuis));
 </script>
 </body>
 </html>
