@@ -6,21 +6,21 @@
 </head>
 <body>
 <script>
-function crearSaludo(nombre, hora) {
-  let saludo = "Hola";
+function crearSaludo(hora, nombre) { //error de sintaxis: function crearSaludo(hora, nombre) Se debe cambiar el orden de los parametros para que coincida con la llamada a la funcion.
+  let saludo = "Hola"; 
  
-  if (hora < 12) {
-    saludo = "Buenos días";
-  } else if (hora < 20) {
+  if (hora <= 12) { //error de sintaxis: if (hora < 12) Se debe cambiar el < por <= para que el saludo sea correcto a las 12.
+    saludo = "Buenos días"; 
+  } else if (hora < 20) { 
     saludo = "Buenas tardes";
-  } else {
+  } else { 
     saludo = "Buenas noches";
   }
  
-  return saludo + ", " + nombre + "!";
+  return saludo + ", " + nombre + "!"; 
 }
  
-let nombre = "Ana";
+let nombre = "Ana"; 
 let hora = 15;
 let mensaje = crearSaludo(hora, nombre);
 console.log(mensaje);
